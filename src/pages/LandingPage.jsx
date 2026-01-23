@@ -1,25 +1,24 @@
 import { motion } from 'framer-motion'
 import img1 from '../assets/img1.jpg'
+import Footer from '../components/Footer'
+import sensei from '../assets/sensei.jpg'
+import karat from '../assets/karat.jpg'
+import box from '../assets/box.jpg'
 
-
-const classPanels = [
+const disciplinePosters = [
   {
-    title: 'Power Circuit',
-    subtitle: 'HIIT + Técnicas de patadas',
-    description: 'Rutas intensas con timers, cuerdas y foco en la explosividad.',
-    image: 'https://images.unsplash.com/photo-1508255136891-7f4d8f6ed0ce?auto=format&fit=crop&w=900&q=60',
+    title: 'KICKBOXING',
+    tag: 'IMPACTO EN FUEGO',
+    description:
+      'Entrenamientos explosivos donde cada golpe se celebra como un ritual. Ritmo, furia y control técnico.',
+    image: box,
   },
   {
-    title: 'Sparring Vision',
-    subtitle: 'Golpeo de combate real',
-    description: 'Entrena con compañeros variados para adaptar reflejos y defensa.',
-    image: 'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=60',
-  },
-  {
-    title: 'Ritmo Sensei',
-    subtitle: 'Trabajo técnico y respiración',
-    description: 'Cadenas de combos que terminan con estiramientos guiados y mantra.',
-    image: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=900&q=60',
+    title: 'KARATE KYOKUSHIN',
+    tag: 'RAÍCES & AMBICIÓN',
+    description:
+      'Disciplina milenaria que exige precisión absoluta. La paciencia del karate y la intensidad del Kyokushin se fusionan.',
+    image: karat,
   },
 ]
 
@@ -29,7 +28,7 @@ function LandingPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-[#09090b] text-white">
+      <div className="bg-black text-white">
         <section
           className="relative min-h-[85vh] overflow-hidden bg-cover bg-center"
         style={{
@@ -60,8 +59,8 @@ function LandingPage() {
             </span>
           </motion.div>
         </div>
-        {/* Degradado de transición suave hacia el fondo */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-b from-transparent to-[#09090b] z-10 pointer-events-none" />
+        {/* Máscara de fusión perfecta a negro */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-64 bg-gradient-to-b from-transparent via-black/80 to-black z-10 pointer-events-none"></div>
       </section>
 
       <section className="relative z-20 -skew-y-3 mt-40 bg-transparent">
@@ -81,59 +80,65 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl space-y-10 px-6 py-20 sm:px-8">
-        <div className="-skew-y-3 py-12">
-          <div className="skew-y-3 grid gap-10 md:grid-cols-[1.1fr_1fr]">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/60">
-              <img
-                src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=60"
-                alt="Sensei"
-                className="h-full w-full object-cover transition duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent" />
+      <section className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/70 to-black/80 px-4 py-16 sm:px-10 sm:py-24">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(211,21,30,0.25),transparent_60%)]" />
+          <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-end">
+            <div className="relative flex items-end justify-center lg:justify-start">
+              <div className="relative h-[520px] w-full max-w-sm overflow-hidden rounded-[32px] border border-white/10 shadow-[0_35px_120px_rgba(211,21,30,0.55)]">
+                <img
+                  src={sensei}
+                  alt="Sensei Sergio Aguilera"
+                  className="h-full w-full object-cover transition duration-1000"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              </div>
             </div>
-            <div className="flex flex-col gap-6 rounded-3xl border border-white/10 bg-black/60 p-8 backdrop-blur-md">
-              <p className="text-xs uppercase tracking-[0.6em] text-gray-400">Sensei Sergio Aguilera</p>
-              <h3 className="text-3xl font-black text-white">Cinturón Negro Kickboxing & Kyokushin</h3>
-              <p className="text-sm leading-relaxed text-gray-300">
-                18 años guiando guerreros urbanos. Su filosofía combina el rigor japonés con los ritmos latinos de nuestra ciudad. Aquí la técnica tiene alma y la disciplina se viste de humanidad.
+            <div className="relative -mt-12 rounded-[32px] border border-white/20 bg-black/70 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.75)] backdrop-blur-xl lg:-mt-20 lg:-ml-12">
+              <p className="text-xs uppercase tracking-[1em] text-red-500">El Mentor</p>
+              <h2 className="text-5xl font-black uppercase tracking-tight text-white md:text-6xl">Sergio Aguilera</h2>
+              <h3 className="text-sm uppercase tracking-[0.7em] text-neutral-400">Cinturón Negro 3º Dan Kyokushin &amp; Kickboxing</h3>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-300">
+                En la sala de Onekick se respira historia. Su metodología mezcla la dureza del dojo japonés con la ferocidad de los rings urbanos; cada instrucción es un llamado a la entrega total.
               </p>
-              <p className="text-lg font-semibold italic text-red-400">“Cada pistolada que das al saco es un paso más cerca del próximo título.”</p>
+              <p className="mt-6 text-2xl font-serif italic text-gray-200">“Cada pistolada que das al saco es un paso más cerca del próximo título.”</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="relative bg-black/90 px-6 py-20 sm:px-8">
-        <div className="-skew-y-3">
-          <div className="skew-y-3 mx-auto max-w-6xl space-y-10">
-            <motion.div {...motionFade} className="space-y-4">
-              <p className="text-xs uppercase tracking-[0.6em] text-gray-400">Sesiones</p>
-              <h4 className="text-3xl font-semibold uppercase tracking-[0.4em] text-white">Clases de Alto Impacto</h4>
-            </motion.div>
-            <div className="grid gap-8 md:grid-cols-3">
-              {classPanels.map((panel, index) => (
-                <motion.article
-                  key={panel.title}
-                  {...motionFade}
-                  transition={{ delay: 0.1 * index + 0.2, duration: 0.6 }}
-                  className="group relative flex h-72 flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-6 text-white backdrop-blur-md"
-                >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
-                    style={{
-                      backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)), url(${panel.image})`,
-                    }}
-                  />
-                  <div className="relative z-10 space-y-3">
-                    <h5 className="text-sm font-semibold uppercase tracking-[0.45em] text-red-400">{panel.subtitle}</h5>
-                    <h3 className="text-2xl font-black uppercase tracking-tight">{panel.title}</h3>
-                    <p className="text-sm text-gray-200">{panel.description}</p>
-                    <span className="inline-block text-xs uppercase tracking-[0.5em] text-gray-400">Ver clase</span>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
+        <div className="mx-auto max-w-6xl space-y-10">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.7em] text-red-500">Disciplinas</p>
+            <h4 className="text-3xl font-semibold uppercase tracking-[0.35em] text-white">Pósters de Impacto</h4>
+            <p className="max-w-3xl text-sm text-neutral-400">
+              Dos mundos, una misma intensidad. Estas composiciones celebran la velocidad del Kickboxing y la pureza del Karate Kyokushin con luz, sombra y drama.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {disciplinePosters.map((poster) => (
+              <article
+                key={poster.title}
+                className="group relative h-[520px] overflow-hidden rounded-2xl border border-white/10 bg-black/30 shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition duration-700 will-change-transform"
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition duration-1000 group-hover:scale-110"
+                  style={{ backgroundImage: `url(${poster.image})` }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),transparent_60%)] opacity-0 transition duration-700 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute bottom-0 left-0 right-0 z-10 px-6 pb-8 pt-10 text-white">
+                  <p className="text-xs uppercase tracking-[0.6em] text-red-400">{poster.tag}</p>
+                  <h3 className="mt-3 text-4xl font-black uppercase tracking-[0.3em] transition duration-500 group-hover:-translate-y-4 md:text-5xl">
+                    {poster.title}
+                  </h3>
+                  <p className="mt-4 max-w-sm text-sm text-white/80">{poster.description}</p>
+                </div>
+                <div className="absolute inset-0 transition duration-700 group-hover:ring-2 group-hover:ring-red-600/50" />
+              </article>
+            ))}
           </div>
         </div>
       </section>
