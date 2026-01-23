@@ -6,7 +6,7 @@ import logo from '../assets/logo.jpg'
 const navItems = [
   { label: 'Inicio', to: '/' },
   { label: 'Nosotros', to: '/nosotros' },
-  { label: 'Disciplinas', to: '/disciplinas' },
+  { label: 'Redes', to: '/redes' },
   { label: 'Horarios', to: '/horarios' },
   { label: 'Contacto', to: '/contacto' },
 ]
@@ -49,12 +49,14 @@ function Navbar() {
           ))}
         </nav>
 
-        <Link
-          to="/clase-de-prueba"
+        <a
+          href="https://wa.me/569957932469?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20agendar%20mi%20clase%20de%20prueba."
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-full bg-onekick-red px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-white transition duration-200 ease-out transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onekick-red md:inline-flex"
         >
           Clase de Prueba
-        </Link>
+        </a>
 
         <button
           type="button"
@@ -111,14 +113,6 @@ function Navbar() {
                 </NavLink>
               ))}
             </nav>
-
-            <Link
-              to="/clase-de-prueba"
-              onClick={handleLinkClick}
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-onekick-red px-4 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition duration-200 hover:scale-105"
-            >
-              Clase de Prueba
-            </Link>
           </div>
         </div>
       )}

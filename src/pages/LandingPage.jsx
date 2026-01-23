@@ -30,15 +30,15 @@ function LandingPage() {
     <>
       <div className="bg-black text-white">
         <section
-          className="relative min-h-[85vh] overflow-hidden bg-cover bg-center"
+          className="relative min-h-[100vh] overflow-hidden bg-cover bg-center"
         style={{
           backgroundImage:
-            `linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.7)),linear-gradient(135deg,#D3151E00,#D3151E60),url(${img1})`,
+            `linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),linear-gradient(135deg,#D3151E00,#D3151E60),url(${img1})`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(211,21,30,0.4),transparent_55%)]" />
-        <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center gap-6 px-6 py-16 md:px-8">
+        <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center gap-6 px-6 py-16 md:px-8 lg:py-36">
           <motion.p {...motionFade} className="text-xs uppercase tracking-[0.6em] text-gray-300">
             Aquí nadie pelea solo
           </motion.p>
@@ -54,17 +54,21 @@ function LandingPage() {
             En Onekick rompemos la calma para crear fuerza. Cada sesión combina técnica explosiva, disciplina mental y una comunidad que empuja hasta el final.
           </motion.p>
           <motion.div {...motionFade} transition={{ delay: 0.4, duration: 0.7 }} className="flex flex-wrap gap-4">
-            <span className="rounded-full border border-red-600/80 px-6 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-red-400">
+            <a
+              href="https://wa.me/569957932469?text=Hola,%20vengo%20de%20la%20web%20y%20quiero%20agendar%20mi%20clase%20de%20prueba."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-red-600/80 px-6 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-red-400 transition duration-200 ease-out transform hover:scale-105"
+            >
               Agenda tu clase
-            </span>
+            </a>
           </motion.div>
         </div>
-        {/* Máscara de fusión perfecta a negro */}
         <div className="absolute bottom-0 left-0 right-0 h-32 md:h-64 bg-gradient-to-b from-transparent via-black/80 to-black z-10 pointer-events-none"></div>
       </section>
 
-      <section className="relative z-20 -skew-y-3 mt-40 bg-transparent">
-        <div className="relative py-24 bg-transparent overflow-hidden">
+      <section className="relative z-20 -skew-y-3 mt-30 bg-transparent">
+        <div className="relative py-20 bg-transparent overflow-hidden">
           <div className="relative -skew-y-3 h-28 overflow-hidden">
             <div className="absolute inset-0 skew-y-3 bg-white" />
             <div className="absolute inset-0 flex items-center bg-white" style={{ paddingLeft: '5vw' }}>
@@ -80,7 +84,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8">
+      <section className="relative mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-32">
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800/70 to-black/80 px-4 py-16 sm:px-10 sm:py-24">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(211,21,30,0.25),transparent_60%)]" />
           <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-end">
@@ -95,7 +99,7 @@ function LandingPage() {
               </div>
             </div>
             <div className="relative -mt-12 rounded-[32px] border border-white/20 bg-black/70 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.75)] backdrop-blur-xl lg:-mt-20 lg:-ml-12">
-              <p className="text-xs uppercase tracking-[1em] text-red-500">El Mentor</p>
+              <p className="text-xs uppercase tracking-[1em] text-red-500">Sensei</p>
               <h2 className="text-5xl font-black uppercase tracking-tight text-white md:text-6xl">Sergio Aguilera</h2>
               <h3 className="text-sm uppercase tracking-[0.7em] text-neutral-400">Cinturón Negro 3º Dan Kyokushin &amp; Kickboxing</h3>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-neutral-300">
@@ -107,7 +111,7 @@ function LandingPage() {
         </div>
       </section>
 
-      <section className="relative bg-black/90 px-6 py-20 sm:px-8">
+      <section className="relative bg-black/90 px-6 py-16 sm:px-8 mb-20">
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.7em] text-red-500">Disciplinas</p>

@@ -4,26 +4,26 @@ import { Link } from "react-router-dom";
 const quickLinks = [
   { label: "Inicio", to: "/" },
   { label: "Nosotros", to: "/nosotros" },
-  { label: "Disciplinas", to: "/disciplinas" },
+  { label: "Redes", to: "/redes" },
   { label: "Horarios", to: "/horarios" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 const contacts = [
-  { icon: MapPin, label: "C. Principal 123, Madrid" },
-  { icon: Phone, label: "+34 600 123 456" },
-  { icon: Mail, label: "contacto@onekick.es" },
+  { icon: MapPin, label: "O'Higgins 165, Concepción, Chile" },
+  { icon: Phone, label: "+56 9 9579 32469" },
 ];
 
 const socialLinks = [
   {
     icon: Facebook,
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/academiaonekick",
   },
   {
     icon: Instagram,
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/academia_onekick/",
   },
 ];
 
@@ -31,7 +31,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-950 border-t border-white/10 text-neutral-300">
+    <footer className="relative z-50 bg-black border-t border-white/10 text-neutral-300">
       <div className="max-w-6xl mx-auto px-6 py-8 lg:py-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -94,11 +94,8 @@ const Footer = () => {
               Horarios e info
             </h2>
             <p className="mt-4 text-sm text-neutral-400">
-              Lunes a Viernes: 09:00 - 22:00
-              <br />
-              Sábados: 10:00 - 15:00
-              <br />
-              Domingos y festivos cerrado.
+              Lunes a Viernes: 8:00 - 20:00
+              Sábados, domingos y festivos cerrado.
             </p>
             <p className="mt-4 text-xs text-neutral-500">
               Onekick es un centro dedicado al entrenamiento completo en Kyokushin y
@@ -110,8 +107,8 @@ const Footer = () => {
 
       <div className="border-t border-white/10 mt-12">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col items-center gap-2 text-xs text-neutral-500 md:flex-row md:items-center md:justify-between">
-          <p>© {year} Onekick. Todos los derechos reservados.</p>
-          <p>Desarrollado por Onekick Studio.</p>
+          <p>© {year} Academia Onekick. Todos los derechos reservados.</p>
+          <p>Desarrollado por frani3.</p>
         </div>
       </div>
     </footer>
