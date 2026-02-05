@@ -17,7 +17,7 @@ function Navbar() {
   const handleLinkClick = () => setIsOpen(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md relative">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3 text-white">
           <div className="h-12 w-12 overflow-hidden rounded-full border border-white/10 bg-white/10">
@@ -58,64 +58,42 @@ function Navbar() {
           Clase de Prueba
         </a>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white transition duration-200 hover:border-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onekick-red lg:hidden"
-          aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="relative md:hidden">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white transition duration-200 hover:border-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-onekick-red"
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+          {isOpen && (
+            <div
+              className="absolute -right-1 top-full z-40 mt-3 w-[calc(100vw-1.5rem)] max-w-sm rounded-3xl border border-white/10 bg-black/90 px-6 py-6 shadow-2xl shadow-black/50 backdrop-blur-lg"
+              role="menu"
+            >
+              <nav className="flex flex-col gap-4 text-[0.95rem] font-semibold uppercase tracking-[0.35em] text-white">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    onClick={handleLinkClick}
+                    className={({ isActive }) =>
+                      `transition-colors duration-200 ${
+                        isActive ? 'text-onekick-red' : 'text-white/80 hover:text-onekick-red'
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden pointer-events-auto">
-          <div
-            className="absolute inset-0 bg-black/85"
-            aria-hidden
-            onClick={handleLinkClick}
-          />
-
-          <div
-            className="absolute inset-y-0 right-0 z-40 flex w-full max-w-xs flex-col rounded-l-3xl border border-white/5 bg-[#050505]/95 px-6 py-8 shadow-2xl shadow-black/70"
-            role="dialog"
-            aria-modal="true"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-between">
-              <Link to="/" className="text-lg font-semibold text-white" onClick={handleLinkClick}>
-                Onekick
-              </Link>
-              <button
-                type="button"
-                className="rounded-full border border-white/10 p-2 text-white transition duration-200 hover:border-white/40"
-                aria-label="Cerrar menú"
-                onClick={handleLinkClick}
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            <nav className="mt-10 flex flex-1 flex-col gap-6 text-lg font-semibold uppercase tracking-[0.35em] text-white">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={handleLinkClick}
-                  className={({ isActive }) =>
-                    `transition-colors duration-200 ${
-                      isActive ? 'text-onekick-red' : 'text-white/80 hover:text-onekick-red'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
-          </div>
-        </div>
-      )}
     </header>
   )
 }
